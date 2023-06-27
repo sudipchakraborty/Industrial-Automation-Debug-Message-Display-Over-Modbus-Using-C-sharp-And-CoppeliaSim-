@@ -32,19 +32,19 @@
             this.lst_msg = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chk_top = new System.Windows.Forms.CheckBox();
             this.tb_font_size = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_disconnect = new System.Windows.Forms.Button();
             this.btn_connect = new System.Windows.Forms.Button();
             this.txt_baud_rate = new System.Windows.Forms.TextBox();
+            this.txt_device_ID = new System.Windows.Forms.TextBox();
             this.txt_port = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.timer_data_read = new System.Windows.Forms.Timer(this.components);
-            this.txt_device_ID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.chk_top = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_font_size)).BeginInit();
@@ -90,6 +90,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONFIGURATION";
             // 
+            // chk_top
+            // 
+            this.chk_top.AutoSize = true;
+            this.chk_top.Location = new System.Drawing.Point(30, 362);
+            this.chk_top.Name = "chk_top";
+            this.chk_top.Size = new System.Drawing.Size(48, 17);
+            this.chk_top.TabIndex = 4;
+            this.chk_top.Text = "TOP";
+            this.chk_top.UseVisualStyleBackColor = true;
+            // 
             // tb_font_size
             // 
             this.tb_font_size.Location = new System.Drawing.Point(20, 286);
@@ -114,6 +124,15 @@
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Font Size";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 199);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "DEVICE ID";
             // 
             // label1
             // 
@@ -152,6 +171,15 @@
             this.txt_baud_rate.Name = "txt_baud_rate";
             this.txt_baud_rate.Size = new System.Drawing.Size(100, 20);
             this.txt_baud_rate.TabIndex = 0;
+            this.txt_baud_rate.Text = "9600";
+            // 
+            // txt_device_ID
+            // 
+            this.txt_device_ID.Location = new System.Drawing.Point(83, 196);
+            this.txt_device_ID.Name = "txt_device_ID";
+            this.txt_device_ID.Size = new System.Drawing.Size(100, 20);
+            this.txt_device_ID.TabIndex = 0;
+            this.txt_device_ID.Text = "1";
             // 
             // txt_port
             // 
@@ -159,6 +187,7 @@
             this.txt_port.Name = "txt_port";
             this.txt_port.Size = new System.Drawing.Size(100, 20);
             this.txt_port.TabIndex = 0;
+            this.txt_port.Text = "COM1";
             // 
             // label4
             // 
@@ -175,32 +204,6 @@
             this.timer_data_read.Enabled = true;
             this.timer_data_read.Interval = 1;
             this.timer_data_read.Tick += new System.EventHandler(this.timer_data_read_Tick);
-            // 
-            // txt_device_ID
-            // 
-            this.txt_device_ID.Location = new System.Drawing.Point(83, 196);
-            this.txt_device_ID.Name = "txt_device_ID";
-            this.txt_device_ID.Size = new System.Drawing.Size(100, 20);
-            this.txt_device_ID.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 199);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "DEVICE ID";
-            // 
-            // chk_top
-            // 
-            this.chk_top.AutoSize = true;
-            this.chk_top.Location = new System.Drawing.Point(30, 362);
-            this.chk_top.Name = "chk_top";
-            this.chk_top.Size = new System.Drawing.Size(48, 17);
-            this.chk_top.TabIndex = 4;
-            this.chk_top.Text = "TOP";
-            this.chk_top.UseVisualStyleBackColor = true;
             // 
             // frm_main
             // 
