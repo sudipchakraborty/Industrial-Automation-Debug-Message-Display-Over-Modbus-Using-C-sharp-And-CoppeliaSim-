@@ -1,0 +1,27 @@
+diff a/C#/Modbus_Debug_Terminal/Modbus_Debug_Terminal/obj/Debug/Modbus_Debug_Terminal.csproj.FileListAbsolute.txt b/C#/Modbus_Debug_Terminal/Modbus_Debug_Terminal/obj/Debug/Modbus_Debug_Terminal.csproj.FileListAbsolute.txt	(rejected hunks)
+@@ -2,11 +3,25 @@
+++<<<<<<< HEAD
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\bin\Debug\Modbus_Debug_Terminal.exe.config
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\bin\Debug\Modbus_Debug_Terminal.exe
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\bin\Debug\Modbus_Debug_Terminal.pdb
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.AssemblyReference.cache
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.SuggestedBindingRedirects.cache
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.frm_main.resources
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.Properties.Resources.resources
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.GenerateResource.cache
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.CoreCompileInputs.cache
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.exe
+ +C:\Users\Dr. S Chakraborty\Desktop\Running projects\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.pdb
+++=======
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.AssemblyReference.cache
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.SuggestedBindingRedirects.cache
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.frm_main.resources
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.Properties.Resources.resources
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.GenerateResource.cache
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.csproj.CoreCompileInputs.cache
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\bin\Debug\Modbus_Debug_Terminal.exe.config
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\bin\Debug\Modbus_Debug_Terminal.exe
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\bin\Debug\Modbus_Debug_Terminal.pdb
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.exe
++ C:\Users\Dr.Sudip\OneDrive - Anora, LLC\Desktop\Running_Project\C#\Modbus_Debug_Terminal\Modbus_Debug_Terminal\obj\Debug\Modbus_Debug_Terminal.pdb
+++>>>>>>> 9cf3d21 (checkbox "Top" Added)

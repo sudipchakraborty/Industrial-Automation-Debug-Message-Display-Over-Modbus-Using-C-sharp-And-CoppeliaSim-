@@ -52,8 +52,15 @@
     <Compile Include="frm_main.Designer.cs">
       <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModbusRtuClient.cs" />
+    <Compile Include="ModbusRtuMaster.cs" />
+    <Compile Include="Modbus_Common.cs" />
+    <Compile Include="Modbus_Packet.cs" />
+    <Compile Include="MSG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RS232_Minimal.cs" />
+    <Compile Include="utility.cs" />
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
