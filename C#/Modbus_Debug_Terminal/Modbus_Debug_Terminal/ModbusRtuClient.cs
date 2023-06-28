@@ -82,6 +82,44 @@ namespace Tools
             }
             crc_rx = Get_CRC(b, count-2);
         }
+
+        public string Get_String(byte[] b, int count) 
+        {
+            string ret_str = "";
+
+            slave_addr_rx = b[0];
+            function_code = b[1];
+            starting_addr = Get_Uint16_From_Byte(b, 2);
+
+            if (function_code == 0x03) // read holding register
+            {
+                reg16_count = Get_Uint16_From_Byte(b, 4);
+            }
+            else if (function_code == 0x06) // Write Single register
+            {
+                Data[0] = Get_Uint16_From_Byte(b, 4);
+            }
+            else if (function_code == 0x10) // Write multiple register
+            {
+            //    reg16_count = Get_Uint16_From_Byte(b, 4);
+                Byte_Count = b[6];
+
+                int k = 0;
+                int pos = 7;
+                do
+                {
+                    ret_str += b[pos].ToString();
+                    pos++;
+                    k++;
+                } while (k != Byte_Count);
+            }
+            else
+            {
+
+            }
+
+            return ret_str;
+        }
         //_________________________________________________________________________________________________________________________
         public void Prepare_Response_Packet_Header()
         {

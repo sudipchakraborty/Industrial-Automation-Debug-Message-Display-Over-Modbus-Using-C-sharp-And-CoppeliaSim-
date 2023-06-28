@@ -21,6 +21,15 @@ namespace Tools
         {
             lst.Items.Insert(0, DateTime.Now.ToString() + ">" + str + "\r\n");
         }
+        public void Update_first_line(string str) 
+        {
+            lst.Items[0] = str;
+        }
+
+
+
+
+        
 
 
     }// class MessageScroll

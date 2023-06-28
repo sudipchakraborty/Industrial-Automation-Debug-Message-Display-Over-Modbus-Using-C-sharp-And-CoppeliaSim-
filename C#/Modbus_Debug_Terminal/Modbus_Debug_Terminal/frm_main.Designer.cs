@@ -33,9 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chk_top = new System.Windows.Forms.CheckBox();
-            this.tb_font_size = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_disconnect = new System.Windows.Forms.Button();
@@ -45,17 +43,25 @@
             this.txt_port = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.timer_data_read = new System.Windows.Forms.Timer(this.components);
+            this.chk_same_msg = new System.Windows.Forms.CheckBox();
+            this.btn_start_reading = new System.Windows.Forms.Button();
+            this.btn_stop_reading = new System.Windows.Forms.Button();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_font_size)).BeginInit();
             this.SuspendLayout();
             // 
             // lst_msg
             // 
+            this.lst_msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lst_msg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_msg.ForeColor = System.Drawing.Color.White;
             this.lst_msg.FormattingEnabled = true;
+            this.lst_msg.ItemHeight = 20;
             this.lst_msg.Location = new System.Drawing.Point(18, 35);
             this.lst_msg.Name = "lst_msg";
-            this.lst_msg.Size = new System.Drawing.Size(1177, 511);
+            this.lst_msg.Size = new System.Drawing.Size(1177, 504);
             this.lst_msg.TabIndex = 0;
             // 
             // groupBox1
@@ -71,11 +77,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_search);
+            this.groupBox2.Controls.Add(this.btn_stop_reading);
+            this.groupBox2.Controls.Add(this.btn_start_reading);
+            this.groupBox2.Controls.Add(this.chk_same_msg);
             this.groupBox2.Controls.Add(this.chk_top);
-            this.groupBox2.Controls.Add(this.tb_font_size);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btn_disconnect);
             this.groupBox2.Controls.Add(this.btn_connect);
@@ -93,19 +102,12 @@
             // chk_top
             // 
             this.chk_top.AutoSize = true;
-            this.chk_top.Location = new System.Drawing.Point(30, 362);
+            this.chk_top.Location = new System.Drawing.Point(20, 253);
             this.chk_top.Name = "chk_top";
             this.chk_top.Size = new System.Drawing.Size(48, 17);
             this.chk_top.TabIndex = 4;
             this.chk_top.Text = "TOP";
             this.chk_top.UseVisualStyleBackColor = true;
-            // 
-            // tb_font_size
-            // 
-            this.tb_font_size.Location = new System.Drawing.Point(20, 286);
-            this.tb_font_size.Name = "tb_font_size";
-            this.tb_font_size.Size = new System.Drawing.Size(151, 45);
-            this.tb_font_size.TabIndex = 3;
             // 
             // label2
             // 
@@ -115,15 +117,6 @@
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Baud Rate";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 270);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Font Size";
             // 
             // label5
             // 
@@ -179,7 +172,7 @@
             this.txt_device_ID.Name = "txt_device_ID";
             this.txt_device_ID.Size = new System.Drawing.Size(100, 20);
             this.txt_device_ID.TabIndex = 0;
-            this.txt_device_ID.Text = "1";
+            this.txt_device_ID.Text = "200";
             // 
             // txt_port
             // 
@@ -187,7 +180,7 @@
             this.txt_port.Name = "txt_port";
             this.txt_port.Size = new System.Drawing.Size(100, 20);
             this.txt_port.TabIndex = 0;
-            this.txt_port.Text = "COM1";
+            this.txt_port.Text = "COM3";
             // 
             // label4
             // 
@@ -205,6 +198,54 @@
             this.timer_data_read.Interval = 1;
             this.timer_data_read.Tick += new System.EventHandler(this.timer_data_read_Tick);
             // 
+            // chk_same_msg
+            // 
+            this.chk_same_msg.AutoSize = true;
+            this.chk_same_msg.Location = new System.Drawing.Point(20, 285);
+            this.chk_same_msg.Name = "chk_same_msg";
+            this.chk_same_msg.Size = new System.Drawing.Size(164, 17);
+            this.chk_same_msg.TabIndex = 5;
+            this.chk_same_msg.Text = "Do not repeat same message";
+            this.chk_same_msg.UseVisualStyleBackColor = true;
+            // 
+            // btn_start_reading
+            // 
+            this.btn_start_reading.ForeColor = System.Drawing.Color.Black;
+            this.btn_start_reading.Location = new System.Drawing.Point(21, 327);
+            this.btn_start_reading.Name = "btn_start_reading";
+            this.btn_start_reading.Size = new System.Drawing.Size(81, 71);
+            this.btn_start_reading.TabIndex = 6;
+            this.btn_start_reading.Text = "START READING";
+            this.btn_start_reading.UseVisualStyleBackColor = true;
+            this.btn_start_reading.Click += new System.EventHandler(this.btn_start_reading_Click);
+            // 
+            // btn_stop_reading
+            // 
+            this.btn_stop_reading.ForeColor = System.Drawing.Color.Black;
+            this.btn_stop_reading.Location = new System.Drawing.Point(108, 327);
+            this.btn_stop_reading.Name = "btn_stop_reading";
+            this.btn_stop_reading.Size = new System.Drawing.Size(81, 71);
+            this.btn_stop_reading.TabIndex = 6;
+            this.btn_stop_reading.Text = "STOP READING";
+            this.btn_stop_reading.UseVisualStyleBackColor = true;
+            this.btn_stop_reading.Click += new System.EventHandler(this.btn_stop_reading_Click);
+            // 
+            // txt_search
+            // 
+            this.txt_search.Location = new System.Drawing.Point(6, 490);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(185, 20);
+            this.txt_search.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 474);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "SEARCH";
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,7 +262,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_font_size)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,18 +273,21 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_connect;
         private System.Windows.Forms.TextBox txt_baud_rate;
         private System.Windows.Forms.TextBox txt_port;
-        private System.Windows.Forms.TrackBar tb_font_size;
         private System.Windows.Forms.Button btn_disconnect;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer_data_read;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_device_ID;
         private System.Windows.Forms.CheckBox chk_top;
+        private System.Windows.Forms.CheckBox chk_same_msg;
+        private System.Windows.Forms.Button btn_stop_reading;
+        private System.Windows.Forms.Button btn_start_reading;
+        private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.Label label3;
     }
 }
 
