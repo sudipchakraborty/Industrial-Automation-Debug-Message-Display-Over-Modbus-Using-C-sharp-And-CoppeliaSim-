@@ -108,7 +108,7 @@ namespace Tools
                 int pos = 7;
                 do
                 {
-                    ret_str += b[pos].ToString();
+                    ret_str += (Convert.ToChar(b[pos])).ToString();
                     pos++;
                     k++;
                 } while (k != Byte_Count);

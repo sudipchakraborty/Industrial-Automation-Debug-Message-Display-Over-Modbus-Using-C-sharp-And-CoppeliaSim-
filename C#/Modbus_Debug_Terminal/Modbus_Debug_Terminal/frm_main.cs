@@ -18,6 +18,7 @@ namespace Modbus_Debug_Terminal
         ModbusRtuClient client;
         string msg_prev = "";
         int msg_repeat_count = 0;
+        int receive_count = 0;
        
         public frm_main()
         {
@@ -55,55 +56,58 @@ namespace Modbus_Debug_Terminal
 
         private void timer_data_read_Tick(object sender, EventArgs e)
         {
-           // if (!RS232_Minimal.IsOpen) return;
+            if (!RS232_Minimal.IsOpen) return;
 
-            byte[] b=new byte[100];
+            //byte[] b=new byte[100];
 
-            b[0] = 200;
-            b[1] = 0x10;
+            //b[0] = 200;
+            //b[1] = 0x10;
 
-            b[2] = 0x00;
-            b[3] =0x00;
+            //b[2] = 0x00;
+            //b[3] =0x00;
 
-            b[4] =0x00;
-            b[5] =0x05;
+            //b[4] =0x00;
+            //b[5] =0x05;
 
-            b[6] =0x0A;
+            //b[6] =0x0A;
 
-            b[7] = 0;
-            b[8] = 1;
-            b[9] = 2;
-            b[10] = 3;
-            b[11] = 4;
-            b[12] = 5;
-            b[13] = 6;
-            b[14] = 7;
-            b[15] = 8;
-            b[16] = 9;
-            b[17] = 0x83;
-            b[18] = 0xD4;
+            //b[7] = 0;
+            //b[8] = 1;
+            //b[9] = 2;
+            //b[10] = 3;
+            //b[11] = 4;
+            //b[12] = 5;
+            //b[13] = 6;
+            //b[14] = 7;
+            //b[15] = 8;
+            //b[16] = 9;
+            //b[17] = 0x83;
+            //b[18] = 0xD4;
 
-            for (int i = 0; i < 19; i++) 
+            //for (int i = 0; i < 19; i++) 
+            //{
+            //    RS232_Minimal.bfr_rx[i] = b[i];
+            //}
+            //RS232_Minimal.ptr_rx = 19;
+            if (RS232_Minimal.received)
             {
-                RS232_Minimal.bfr_rx[i] = b[i];
-            }
-            RS232_Minimal.ptr_rx = 19;
-          //  if (RS232_Minimal.received)
-          //  {
+              receive_count++;
+              txt_receive_count.Text = receive_count.ToString();
+              RS232_Minimal.received = false;
               string s=  client.Get_String(RS232_Minimal.bfr_rx, RS232_Minimal.ptr_rx);
               if(msg_prev !=s)
                 {
-                    msg.push(s);
-                    msg_prev = s;
-                    msg_repeat_count = 0;
-                }
-                else
-                {
-                    msg_repeat_count++;
-                    msg.Update_first_line(s+"-"+msg_repeat_count.ToString());
+                   msg.push(s);
+                   msg_prev = s;
+              //      msg_repeat_count = 0;
+              //  }
+              //  else
+              //  {
+              //      msg_repeat_count++;
+              //      msg.Update_first_line(s+"-"+msg_repeat_count.ToString());
                 }
                 
-          //  }
+            }
         }
 
         private void tb_font_size_Scroll(object sender, EventArgs e)
