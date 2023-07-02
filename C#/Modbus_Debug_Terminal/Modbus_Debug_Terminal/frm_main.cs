@@ -16,10 +16,7 @@ namespace Modbus_Debug_Terminal
     {
         MSG msg;
         ModbusRtuClient client;
-        string msg_prev = "";
-        int msg_repeat_count = 0;
-        int receive_count = 0;
-       
+            
         public frm_main()
         {
             InitializeComponent();
@@ -57,56 +54,14 @@ namespace Modbus_Debug_Terminal
         private void timer_data_read_Tick(object sender, EventArgs e)
         {
             if (!RS232_Minimal.IsOpen) return;
-
-            //byte[] b=new byte[100];
-
-            //b[0] = 200;
-            //b[1] = 0x10;
-
-            //b[2] = 0x00;
-            //b[3] =0x00;
-
-            //b[4] =0x00;
-            //b[5] =0x05;
-
-            //b[6] =0x0A;
-
-            //b[7] = 0;
-            //b[8] = 1;
-            //b[9] = 2;
-            //b[10] = 3;
-            //b[11] = 4;
-            //b[12] = 5;
-            //b[13] = 6;
-            //b[14] = 7;
-            //b[15] = 8;
-            //b[16] = 9;
-            //b[17] = 0x83;
-            //b[18] = 0xD4;
-
-            //for (int i = 0; i < 19; i++) 
-            //{
-            //    RS232_Minimal.bfr_rx[i] = b[i];
-            //}
-            //RS232_Minimal.ptr_rx = 19;
+            
             if (RS232_Minimal.received)
             {
-              receive_count++;
-              txt_receive_count.Text = receive_count.ToString();
-              RS232_Minimal.received = false;
-              string s=  client.Get_String(RS232_Minimal.bfr_rx, RS232_Minimal.ptr_rx);
-              if(msg_prev !=s)
-                {
-                   msg.push(s);
-                   msg_prev = s;
-              //      msg_repeat_count = 0;
-              //  }
-              //  else
-              //  {
-              //      msg_repeat_count++;
-              //      msg.Update_first_line(s+"-"+msg_repeat_count.ToString());
-                }
-                
+                txt_receive_count.Text = msg.count.ToString();
+                RS232_Minimal.received = false;
+                string s=  client.Get_String(RS232_Minimal.bfr_rx, RS232_Minimal.ptr_rx);
+                msg.push(s);
+                RS232_Minimal.purge();
             }
         }
 
@@ -123,6 +78,30 @@ namespace Modbus_Debug_Terminal
         private void btn_stop_reading_Click(object sender, EventArgs e)
         {
             timer_data_read.Enabled = false;
+        }
+
+        private void chk_top_CheckedChanged(object sender, EventArgs e)
+        {          
+           msg.top = chk_top.Checked; 
+        }
+
+        private void txt_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                timer_data_read.Enabled=false;
+                msg.Find_String(txt_search.Text);   
+            }
+        }
+
+        private void chk_same_msg_CheckedChanged(object sender, EventArgs e)
+        {
+            msg.repeat_same_message = chk_same_msg.Checked; 
+        }
+
+        private void chk_do_not_process_CRC_CheckedChanged(object sender, EventArgs e)
+        {
+            client.Check_CRC=chk_do_not_process_CRC.Checked;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Tools
 {
     class ModbusRtuClient
     {
-
+        public bool Check_CRC = false;
         public byte slave_addr = 1;
         public byte multicast_addr = 255;
         public byte slave_addr_rx;
@@ -37,13 +37,16 @@ namespace Tools
 
             //<1>Check the packet is for myself
             if((pkt_rx[0] != slave_addr) && (pkt_rx[0] != multicast_addr)) return false;
-           // if(pkt_rx[0] == 0) return false;
-      //      if(pkt_rx[0] != multicast_addr) return false;
+            // if(pkt_rx[0] == 0) return false;
+            //      if(pkt_rx[0] != multicast_addr) return false;
 
             //// <2> Check CRC is OK
-           int crc_calc = Get_CRC(pkt_rx, pkt_rx.Length-2);
-           int crc_rx = utility.Get_Uint16(pkt_rx[pkt_rx.Length-2], pkt_rx[pkt_rx.Length-1]);          
-           if(crc_calc !=crc_rx) return false;
+            if (Check_CRC)
+            {
+                int crc_calc = Get_CRC(pkt_rx, pkt_rx.Length - 2);
+                int crc_rx = utility.Get_Uint16(pkt_rx[pkt_rx.Length - 2], pkt_rx[pkt_rx.Length - 1]);
+                if (crc_calc != crc_rx) return false;
+            }
            
             return true;
         }
@@ -86,6 +89,14 @@ namespace Tools
         public string Get_String(byte[] b, int count) 
         {
             string ret_str = "";
+            int crc_calc, crc_rx;
+
+            if (Check_CRC)
+            {
+                crc_calc = Get_CRC(b, count - 2);
+                crc_rx = utility.Get_Uint16(b[count - 2], b[count - 1]);
+                if (crc_calc != crc_rx) return "";
+            }
 
             slave_addr_rx = b[0];
             function_code = b[1];

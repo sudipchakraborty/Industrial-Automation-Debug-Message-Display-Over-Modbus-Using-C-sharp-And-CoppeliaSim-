@@ -108,10 +108,11 @@
             this.chk_do_not_process_CRC.AutoSize = true;
             this.chk_do_not_process_CRC.Location = new System.Drawing.Point(9, 532);
             this.chk_do_not_process_CRC.Name = "chk_do_not_process_CRC";
-            this.chk_do_not_process_CRC.Size = new System.Drawing.Size(123, 17);
+            this.chk_do_not_process_CRC.Size = new System.Drawing.Size(89, 17);
             this.chk_do_not_process_CRC.TabIndex = 8;
-            this.chk_do_not_process_CRC.Text = "Do not process CRC";
+            this.chk_do_not_process_CRC.Text = "Process CRC";
             this.chk_do_not_process_CRC.UseVisualStyleBackColor = true;
+            this.chk_do_not_process_CRC.CheckedChanged += new System.EventHandler(this.chk_do_not_process_CRC_CheckedChanged);
             // 
             // txt_search
             // 
@@ -119,6 +120,7 @@
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(185, 20);
             this.txt_search.TabIndex = 7;
+            this.txt_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyDown);
             // 
             // btn_stop_reading
             // 
@@ -145,22 +147,28 @@
             // chk_same_msg
             // 
             this.chk_same_msg.AutoSize = true;
+            this.chk_same_msg.Checked = true;
+            this.chk_same_msg.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chk_same_msg.Location = new System.Drawing.Point(20, 285);
             this.chk_same_msg.Name = "chk_same_msg";
-            this.chk_same_msg.Size = new System.Drawing.Size(164, 17);
+            this.chk_same_msg.Size = new System.Drawing.Size(134, 17);
             this.chk_same_msg.TabIndex = 5;
-            this.chk_same_msg.Text = "Do not repeat same message";
+            this.chk_same_msg.Text = "Repeat same message";
             this.chk_same_msg.UseVisualStyleBackColor = true;
+            this.chk_same_msg.CheckedChanged += new System.EventHandler(this.chk_same_msg_CheckedChanged);
             // 
             // chk_top
             // 
             this.chk_top.AutoSize = true;
+            this.chk_top.Checked = true;
+            this.chk_top.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chk_top.Location = new System.Drawing.Point(20, 253);
             this.chk_top.Name = "chk_top";
             this.chk_top.Size = new System.Drawing.Size(48, 17);
             this.chk_top.TabIndex = 4;
             this.chk_top.Text = "TOP";
             this.chk_top.UseVisualStyleBackColor = true;
+            this.chk_top.CheckedChanged += new System.EventHandler(this.chk_top_CheckedChanged);
             // 
             // label2
             // 

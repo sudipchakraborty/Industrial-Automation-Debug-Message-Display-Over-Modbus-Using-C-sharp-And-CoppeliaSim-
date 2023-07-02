@@ -25,14 +25,14 @@ namespace Tools
                 try
                 {
                     sp = new SerialPort(p_name, b_rate, Parity.None, 8, StopBits.One);
-                    sp.ReadTimeout = 5000;
-                    sp.WriteTimeout = 5000;
+                    sp.ReadTimeout = 500;
+                    sp.WriteTimeout = 500;
                     sp.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
                     if (!sp.IsOpen)
                         sp.Open();
                     sp.DiscardInBuffer();
                     IsOpen = true;
-               //     th=new Thread(Timeout); 
+              //      th=new Thread(Timeout); 
                //     th.Start();
                     return true;
                 }
@@ -53,17 +53,22 @@ namespace Tools
         {
             try
             {
+                Thread.Sleep(40);
                 int k = sp.BytesToRead;
 
                 for (int i = 0; i < k; i++)
                 {
-                    bfr_rx[ptr_rx]=(byte)sp.ReadByte();
-                    if (ptr_rx<1024) ptr_rx++;
+                    bfr_rx[i]=(byte)sp.ReadByte();
+              //      if (ptr_rx<1024) ptr_rx++;
                 }
-                received=true;
+                sp.DiscardInBuffer();
+                ptr_rx = k;
+                received =true;
+                
             }
             catch (Exception ex)
             {
+                sp.DiscardInBuffer();
             }
         }
 
@@ -88,6 +93,11 @@ namespace Tools
             sp.DiscardInBuffer();
             sp.DiscardOutBuffer();
             ptr_rx= 0;
+
+            for(int i=0;i<bfr_rx.Length;i++)
+            {
+                bfr_rx[i] = 0;
+            }
         }
 
         public static bool Receive_Any_Bytes()
